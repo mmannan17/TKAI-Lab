@@ -1,6 +1,6 @@
 #!/bin/bash -l
-#SBATCH -o cflang_output.txt          # Standard output file
-#SBATCH -e cflang_error.txt           # Error output file
+#SBATCH -o cfl_rnn_output.txt          # Standard output file
+#SBATCH -e cfl_rnn_error.txt           # Error output file
 #SBATCH -p general                     # Partition to run on
 #SBATCH --cpus-per-task=4              # Number of CPUs
 #SBATCH --mem=16GB                     # Memory allocation
@@ -16,4 +16,4 @@ conda activate cfl_test_env
 echo "Active Conda environment: $(conda info --envs | grep '*' | awk '{print $1}')"
 
 # Running the Python script
-python Cfl_test.py
+python cfl_test_rnn.py
